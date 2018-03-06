@@ -1,0 +1,3 @@
+is_list(+Term)
+sort(+List, -Sorted)
+sort(+Key, +Order. +List, -Sorted)
