@@ -1,0 +1,2 @@
+peano2dec(0,0).
+peano2dec(s(X),Y):- dec2peano(X,N), N is Y+1.
