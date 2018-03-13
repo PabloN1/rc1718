@@ -1,0 +1,2 @@
+producto(?X,?Y,?Z)
+esto es cierto cuando  Z unifica con el producto de X por Y.
