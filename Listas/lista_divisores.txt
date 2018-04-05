@@ -1,0 +1,16 @@
+%lista_divisores(+X,+Y, -ListaR)
+%es cierto cuando ListaR unifica con una lista que contiene
+%a los numeros cuyo resto de la division entera de X entre Z es igual a 0  para valores de Z entre 1 y 0
+%
+%
+
+lista_divisores(X,1,[1]).
+lista_divisores(X, Y, [Y|R] ):-
+Y2 is Y1-1, 
+0 is X mod Y,
+lista_divisores(X,Y2,R).
+
+lista_divisores(X, Y, R):-
+Y2 is Y1-1, 
+Resto is X mod Y, Resto \= 0,
+lista_divisores(X,Y2,R).

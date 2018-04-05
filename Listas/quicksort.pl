@@ -9,11 +9,11 @@
 
 
 divide(_,[],[],[]).
-divide(E,[C|Resto],[C|ME],MA  ):- C<=E, divide(E,Resto, ME,MA ).
-divide(E,[C|Resto],ME,[C|MA]):- C>E, divide(E,Resto,ME,MA).
+divide(E,[ C | Resto ],[ C| ME],MA):-C =< E, divide(E,Resto, ME,MA).
+divide(E,[ C | Resto ],ME,[ C | MA ]):-C > E, divide(E,Resto,ME,MA).
 
-ordena_quick([],[])
-ordenaquick([C|Resto], M):- divide(C,Resto,MA,ME)
-			   ordenaquick(ME,MIN)
-		    	   ordenaquick(MA,MAX)
-			   append(MIN,[C|MAX], M)
+ordena_quick([],[]).
+ordena_quick([C|Resto], R):- divide(C,Resto,ME,MA),
+			   ordena_quick(ME,RMIN),
+		    	   ordena_quick(MA,RMAX),
+			   append(RMIN,[C|RMAX], R).
