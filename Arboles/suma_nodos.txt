@@ -1,0 +1,9 @@
+%suma_nodos(+A, -R)
+%Es cierto cuando R unifica con la suma de todas las etiquetas de arbol A
+%
+
+suma_nodos(nil, 0).
+suma_nodos(a(E, HI, HD), ):-
+	suma_nodos(HI,RI),
+	suma_nodos(HD,RD),
+	R is E + RI + RD.

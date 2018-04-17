@@ -1,0 +1,19 @@
+% simetricos(+A,+B)
+% Es cierto si los arboles A y B son simetricos
+%	1  | 1
+%  /   |  \
+% b    |   b
+
+simetricos(nil,nil).
+simetricos(A,B):-
+	invertir(A,B).
+
+
+%invertir(+A,-R)
+% es cierto si el arbol A es invertido
+
+invertir(nil,nil).
+invertir(A(E,HI,HD), a(E,RD,RI):-
+invertir(HI,RI),
+invertir(HD,RD).
+
